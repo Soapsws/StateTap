@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.20)
 project(StateTap VERSION 0.1.0 LANGUAGES CXX)
 
 add_library(statetap STATIC
-    src/control_center.cpp
     src/transporter.cpp
 )
 add_library(StateTap::StateTap ALIAS statetap)
@@ -20,6 +19,14 @@ if(BUILD_TESTING)
     add_executable(statetap_tap_test tests/tap_test.cpp)
     target_link_libraries(statetap_tap_test PRIVATE StateTap::StateTap)
     add_test(NAME tap_isolation COMMAND statetap_tap_test)
+
+    add_executable(statetap_control_center_test tests/control_center_test.cpp)
+    target_link_libraries(statetap_control_center_test PRIVATE StateTap::StateTap)
+    add_test(NAME control_center_isolation COMMAND statetap_control_center_test)
+
+    add_executable(statetap_tap_control_center_test tests/tap_control_center_test.cpp)
+    target_link_libraries(statetap_tap_control_center_test PRIVATE StateTap::StateTap)
+    add_test(NAME tap_control_center COMMAND statetap_tap_control_center_test)
 endif()
 
 include(GNUInstallDirs)
