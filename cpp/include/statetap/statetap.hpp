@@ -1,18 +1,12 @@
 #pragma once
 
-#include <string_view>
+#include "statetap/tap.hpp"
 
 namespace statetap {
 
-// This is a compileable API sketch. Capture and transport begin after L5.
+// Control Center and transport integration is still a placeholder.
 void initialize() noexcept;
 void shutdown() noexcept;
-
-template <typename T>
-void tap(std::string_view topic, const T& value) noexcept {
-    (void)topic;
-    (void)value;
-}
 
 }  // namespace statetap
 

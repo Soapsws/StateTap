@@ -15,6 +15,13 @@ target_include_directories(statetap PUBLIC
 add_executable(statetap_example examples/basic.cpp)
 target_link_libraries(statetap_example PRIVATE StateTap::StateTap)
 
+include(CTest)
+if(BUILD_TESTING)
+    add_executable(statetap_tap_test tests/tap_test.cpp)
+    target_link_libraries(statetap_tap_test PRIVATE StateTap::StateTap)
+    add_test(NAME tap_isolation COMMAND statetap_tap_test)
+endif()
+
 include(GNUInstallDirs)
 install(TARGETS statetap EXPORT StateTapTargets)
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
