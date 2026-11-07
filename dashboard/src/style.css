@@ -1,0 +1,18 @@
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #e9f2ed; background: #0c1412; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { max-width: 1100px; margin: auto; padding: 32px; }
+header { display: flex; align-items: center; gap: 12px; font-size: 19px; font-weight: 750; }
+.brand-mark { color: #78e5ae; font-size: 26px; }
+.tag { margin-left: auto; color: #9bb0a6; border: 1px solid #32453b; border-radius: 99px; padding: 6px 12px; font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+.hero { margin-top: 80px; padding: 54px; border: 1px solid #2c4538; border-radius: 24px; background: radial-gradient(circle at 85% 12%, #1d4230, #14251c 48%, #102019); }
+.eyebrow { color: #83e5ae; font-size: 12px; font-weight: 700; letter-spacing: .16em; }
+h1 { max-width: 650px; margin: 14px 0; font-size: clamp(36px, 6vw, 64px); letter-spacing: -.055em; line-height: 1.05; }
+.hero > p:not(.eyebrow) { max-width: 560px; color: #abc1b3; line-height: 1.6; }
+.status { display: inline-flex; gap: 9px; align-items: center; margin-top: 24px; padding: 10px 14px; border: 1px solid #3a5746; border-radius: 99px; background: #0e1b15; font-size: 13px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #bd7767; }
+.dot.online { background: #76e5a4; box-shadow: 0 0 12px #76e5a4; }
+.panel { margin-top: 22px; padding: 28px; border: 1px solid #253b30; border-radius: 18px; background: #111d17; }
+.panel h2 { margin: 0 0 8px; font-size: 18px; }
+.panel p { margin: 0; color: #82998a; }
+

@@ -1,0 +1,11 @@
+{
+  "name": "statetap-workspace",
+  "private": true,
+  "workspaces": ["server", "dashboard"],
+  "scripts": {
+    "build": "npm run build --workspace server && npm run build --workspace dashboard",
+    "dev:server": "npm run dev --workspace server",
+    "dev:dashboard": "npm run dev --workspace dashboard"
+  }
+}
+
