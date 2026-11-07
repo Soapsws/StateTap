@@ -9,29 +9,29 @@ StateTap is a planned C++ telemetry library with a TypeScript server and browser
 - `dashboard/`: TypeScript browser interface with connection status.
 - `docs/architecture.md`: agreed L1–L4 design and L5 questions for later.
 
-## Build the C++ library
+## Quick start
 
 ```sh
-cmake -S cpp -B build/cpp
-cmake --build build/cpp
-./build/cpp/statetap_example
-ctest --test-dir build/cpp --output-on-failure
+make       # build and run the C++ tap example
+make test  # run the isolated tap test
 ```
+
+The Makefile calls CMake for the C++ build. You can still use CMake directly if you need build options later.
 
 ## Run the TypeScript pieces
 
 From the repository root:
 
 ```sh
-npm install
-npm run build
-npm run dev:server
+make setup
+make web-build
+make server
 ```
 
 In another terminal:
 
 ```sh
-npm run dev:dashboard
+make dashboard
 ```
 
 Open the URL printed by Vite. The interface reports its connection to the server. It does not show telemetry yet.
